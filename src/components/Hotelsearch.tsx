@@ -1,118 +1,157 @@
-// HotelSearch.tsx
-
-import { useState } from "react";
+import { useState, FC } from "react";
 import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 
-// 1. BookingDialog defined at the top
-function BookingDialog({
-  isOpen,
-  onClose,
-  hotel,
-  checkIn,
-  setCheckIn,
-  checkOut,
-  setCheckOut,
-  onBook,
-  guests,
-}: any) {
-  if (!isOpen) return null;
+const popularLocations = [
+  "Hyderabad",
+  "Bangalore",
+  "Mumbai",
+  "Chennai",
+  "Delhi",
+  "Kolkata",
+  "Goa",
+  "Pune",
+];
+
+const HotelSearch: FC = () => {
+  const [location, setLocation] = useState<string>("");
+  const [checkIn, setCheckIn] = useState<Date>();
+  const [checkOut, setCheckOut] = useState<Date>();
+  const [adults, setAdults] = useState<number>(1);
+  const [children, setChildren] = useState<number>(0);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-6 rounded-lg w-full max-w-md space-y-4">
-        <h3 className="text-lg font-bold">Confirm Your Booking</h3>
-        <p>{hotel.name}</p>
-        <p>{hotel.location}</p>
-        <p>{hotel.description}</p>
-        <p>
-          Stay: {checkIn ? format(checkIn, "MMM dd") : "?"} -{" "}
-          {checkOut ? format(checkOut, "MMM dd yyyy") : "?"}
-        </p>
-        <p>Guests: {guests}</p>
+    <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="rounded-3xl border border-blue-400 bg-white p-6 shadow-2xl transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(59,130,246,0.5)]">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          {/* Location Combo Box */}
+          <div className="flex flex-col">
+            <Label className="mb-1 text-sm text-gray-700">Location</Label>
+            <Input
+              list="popular-locations"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Search or select city"
+              className="rounded-md border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-blue-500 focus:ring-1 focus:ring-blue-400"
+            />
+            <datalist id="popular-locations">
+              {popularLocations.map((city) => (
+                <option key={city} value={city} />
+              ))}
+            </datalist>
+          </div>
 
-        <div className="flex justify-between gap-2 mt-4">
-          <Button variant="outline" onClick={onClose}>
-            Cancel
-          </Button>
-          <Button onClick={onBook}>Confirm</Button>
+          {/* Check-in Date */}
+          <div className="flex flex-col">
+            <Label className="mb-1 text-sm text-gray-700">Check-in</Label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-[140px] justify-start text-left text-sm shadow-md"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {checkIn ? format(checkIn, "MMM dd yyyy") : "Select date"}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={checkIn}
+                  onSelect={setCheckIn}
+                  disabled={(d) => d < new Date()}
+                />
+              </PopoverContent>
+            </Popover>
+          </div>
+
+          {/* Check-out Date */}
+          <div className="flex flex-col">
+            <Label className="mb-1 text-sm text-gray-700">Check-out</Label>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-[140px] justify-start text-left text-sm shadow-md"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {checkOut ? format(checkOut, "MMM dd yyyy") : "Select date"}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={checkOut}
+                  onSelect={setCheckOut}
+                  disabled={(d) => (checkIn ? d <= checkIn : false)}
+                />
+              </PopoverContent>
+            </Popover>
+          </div>
+
+          {/* Adults */}
+          <div className="flex flex-col items-start">
+            <Label className="mb-1 text-sm text-gray-700">Adults</Label>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setAdults(Math.max(1, adults - 1))}
+              >
+                −
+              </Button>
+              <span className="w-6 text-center">{adults}</span>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setAdults(adults + 1)}
+              >
+                +
+              </Button>
+            </div>
+          </div>
+
+          {/* Children */}
+          <div className="flex flex-col items-start">
+            <Label className="mb-1 text-sm text-gray-700">Children</Label>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setChildren(Math.max(0, children - 1))}
+              >
+                −
+              </Button>
+              <span className="w-6 text-center">{children}</span>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setChildren(children + 1)}
+              >
+                +
+              </Button>
+            </div>
+          </div>
+
+          {/* Search Button */}
+          <div>
+            <Button className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-2 text-sm rounded-lg shadow-md">
+              Search
+            </Button>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-// 2. HotelSearch defined after
-export default function HotelSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [checkIn, setCheckIn] = useState<Date | undefined>();
-  const [checkOut, setCheckOut] = useState<Date | undefined>();
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [selectedHotel, setSelectedHotel] = useState<any>(null);
-
-  const dummyHotels = [
-    {
-      id: 1,
-      name: "Palm Resort",
-      location: "Goa",
-      price: 1500,
-      description: "Beachside resort with pool",
-      image: "",
-    },
-    {
-      id: 2,
-      name: "Hill View Hotel",
-      location: "Ooty",
-      price: 1200,
-      description: "Mountain view stay",
-      image: "",
-    },
-  ];
-
-  const filteredHotels = dummyHotels.filter((hotel) =>
-    hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    hotel.location.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return (
-    <div className="p-6 max-w-4xl mx-auto space-y-6">
-      {/* ... your search form code ... */}
-      {/* ... hotel list code ... */}
-
-      {filteredHotels.map((hotel) => (
-        <div key={hotel.id} className="border p-4 rounded-md shadow-sm flex justify-between items-center">
-          <div>
-            <h4 className="text-md font-bold">{hotel.name}</h4>
-            <p className="text-sm text-gray-500">{hotel.location}</p>
-            <p className="text-sm mt-1">INR {hotel.price} / night</p>
-          </div>
-          <Button onClick={() => setSelectedHotel(hotel)}>Book Now</Button>
-        </div>
-      ))}
-
-      {/* Booking Dialog */}
-      {selectedHotel && (
-        <BookingDialog
-          isOpen={!!selectedHotel}
-          onClose={() => setSelectedHotel(null)}
-          hotel={selectedHotel}
-          checkIn={checkIn}
-          setCheckIn={setCheckIn}
-          checkOut={checkOut}
-          setCheckOut={setCheckOut}
-          onBook={() => {
-            alert("Booking confirmed!");
-            setSelectedHotel(null);
-          }}
-          guests={adults + children}
-        />
-      )}
-    </div>
-  );
-}
+export default HotelSearch;
