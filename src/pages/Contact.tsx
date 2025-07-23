@@ -60,49 +60,49 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["7896321265", "9745632581"],
       description: "Call us for immediate assistance"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@travellux.com", "support@travellux.com"],
+      details: ["info@retreat.com", "support@retreat.com"],
       description: "Send us an email anytime"
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Travel Street", "New York, NY 10001"],
+      details: ["Vanasthalipuram", "Hyderabad, 500070"],
       description: "Visit our main office"
     },
     {
       icon: Clock,
       title: "Business Hours",
       details: ["Mon-Fri: 9AM - 8PM", "Sat-Sun: 10AM - 6PM"],
-      description: "Eastern Standard Time"
+      description: "Indian Standard Time"
     }
   ];
 
-  const departments = [
-    {
-      title: "General Inquiries",
-      icon: MessageCircle,
-      email: "info@travellux.com",
-      description: "Questions about our services and bookings"
-    },
-    {
-      title: "Customer Support",
-      icon: Headphones,
-      email: "support@travellux.com",
-      description: "Help with existing bookings and issues"
-    },
-    {
-      title: "Business Partnerships",
-      icon: Phone,
-      email: "partners@travellux.com",
-      description: "Collaboration and business opportunities"
-    }
-  ];
+  // const departments = [
+  //   {
+  //     title: "General Inquiries",
+  //     icon: MessageCircle,
+  //     email: "info@travellux.com",
+  //     description: "Questions about our services and bookings"
+  //   },
+  //   {
+  //     title: "Customer Support",
+  //     icon: Headphones,
+  //     email: "support@travellux.com",
+  //     description: "Help with existing bookings and issues"
+  //   },
+  //   {
+  //     title: "Business Partnerships",
+  //     icon: Phone,
+  //     email: "partners@travellux.com",
+  //     description: "Collaboration and business opportunities"
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -254,7 +254,7 @@ const Contact = () => {
             </Card>
             
             {/* Departments */}
-            <Card>
+            {/* <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   Departments
@@ -281,7 +281,7 @@ const Contact = () => {
                   })}
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
             
             {/* Emergency Contact */}
             <Card className="bg-destructive/5 border-destructive/20">
@@ -295,11 +295,11 @@ const Contact = () => {
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <Phone className="h-4 w-4 text-destructive" />
-                    <span className="text-sm font-medium">+1 (555) 911-HELP</span>
+                    <span className="text-sm font-medium">7965412326-HELP</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Mail className="h-4 w-4 text-destructive" />
-                    <span className="text-sm font-medium">emergency@travellux.com</span>
+                    <span className="text-sm font-medium">emergency@retreat.com</span>
                   </div>
                 </div>
               </CardContent>
@@ -317,7 +317,7 @@ const Contact = () => {
               <MapPin className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <p className="text-muted-foreground mb-2">Interactive map would be displayed here</p>
               <p className="text-sm text-muted-foreground">
-                123 Travel Street, New York, NY 10001
+                Vanasthalipuram, Hyderabad, 500070
               </p>
               <Button variant="outline" className="mt-4">
                 Get Directions

@@ -20,9 +20,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Hotels", href: "/services/hotels" },
     { name: "Resorts", href: "/services/resorts" },
-    { name: "Adventures", href: "/services/adventures" },
-    { name: "Spa Services", href: "/services/spa" },
-    { name: "Cleaning", href: "/services/cleaning" }
+    // { name: "Adventures", href: "/services/adventures" },
+    // { name: "Spa Services", href: "/services/spa" },
+    // { name: "Cleaning", href: "/services/cleaning" }
   ];
 
   const company = [
@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-primary-foreground to-accent rounded-lg"></div>
-              <span className="font-bold text-xl">TravelLux</span>
+              <span className="font-bold text-xl">Retreat</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Your trusted partner for luxury travel experiences. We curate unforgettable journeys that create lasting memories.
@@ -60,15 +60,15 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>7859641236</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4" />
-                <span>info@travellux.com</span>
+                <span>info@retreat.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <MapPin className="h-4 w-4" />
-                <span>123 Travel Street, NYC 10001</span>
+                <span>Vanasthalipuram, Hyd 500070</span>
               </div>
             </div>
 
@@ -147,7 +147,7 @@ const Footer = () => {
         <div className="py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
           <div className="text-primary-foreground/80 text-sm">
-            © {currentYear} TravelLux. All rights reserved.
+            © {currentYear} Retreat. All rights reserved.
           </div>
 
           {/* Trust Badges */}

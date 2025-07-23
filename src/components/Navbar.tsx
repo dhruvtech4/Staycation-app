@@ -11,9 +11,9 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Hotels", href: "/services/hotels" },
     { name: "Resorts", href: "/services/resorts" },
-    { name: "Adventures", href: "/services/adventures" },
-    { name: "Spa", href: "/services/spa" },
-    { name: "Cleaning", href: "/services/cleaning" },
+    // { name: "Adventures", href: "/services/adventures" },
+    // { name: "Spa", href: "/services/spa" },
+    // { name: "Cleaning", href: "/services/cleaning" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -28,11 +28,11 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone className="h-3 w-3" />
-              <span>+1 (555) 123-4567</span>
+              <span>7896425896</span>
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
-              <span>info@travelservices.com</span>
+              <span>info@retreat.com</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -46,8 +46,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg"></div>
-            <span className="font-bold text-xl text-foreground">TravelLux</span>
+            <div className="w-8 h-8 rounded-lg bg-cover bg-center"style={{ backgroundImage: 'url("../public/retreat.png")' }}></div>
+            <span className="font-bold text-3xl text-foreground">Retreat</span>
           </Link>
 
           {/* Desktop Navigation */}

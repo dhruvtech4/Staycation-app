@@ -7,13 +7,13 @@ import Footer from "@/components/Footer";
 const About = () => {
   const team = [
     {
-      name: "Alexandra Chen",
+      name: "Jagath Reddy Vemula",
       role: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?auto=format&fit=crop&q=80&w=300",
       bio: "15+ years in luxury hospitality, passionate about creating unforgettable experiences."
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Hanuman Reddy",
       role: "Head of Operations",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
       bio: "Expert in travel logistics with a focus on seamless customer journeys."
@@ -25,7 +25,7 @@ const About = () => {
       bio: "Dedicated to ensuring every guest receives world-class service and support."
     },
     {
-      name: "David Thompson",
+      name: "Rohith Reddy",
       role: "Travel Specialist",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300",
       bio: "Curates unique adventures and experiences across the globe."
@@ -56,10 +56,10 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2008", title: "Company Founded", description: "Started with a vision to redefine luxury travel" },
-    { year: "2012", title: "Global Expansion", description: "Expanded services to 50+ destinations worldwide" },
-    { year: "2018", title: "Award Recognition", description: "Received 'Best Luxury Travel Service' award" },
-    { year: "2023", title: "500K+ Travelers", description: "Celebrated serving over half a million happy travelers" }
+    { year: "2025", title: "Company Founded", description: "Started with a vision to redefine luxury travel" },
+    // { year: "2012", title: "Global Expansion", description: "Expanded services to 50+ destinations worldwide" },
+    // { year: "2018", title: "Award Recognition", description: "Received 'Best Luxury Travel Service' award" },
+    // { year: "2023", title: "500K+ Travelers", description: "Celebrated serving over half a million happy travelers" }
   ];
 
   return (
@@ -70,7 +70,7 @@ const About = () => {
       <section className="relative py-20 bg-gradient-to-r from-primary to-primary/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-            About TravelLux
+            About Retreat
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
             Crafting Dreams Into
@@ -93,13 +93,13 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  TravelLux began with a simple belief: that travel should be more than just a destination—
+                  Retreat began with a simple belief: that travel should be more than just a destination—
                   it should be a transformative experience that enriches your life and creates memories 
                   that last forever.
                 </p>
                 <p>
-                  Founded in 2008 by Alexandra Chen, a hospitality veteran with a passion for excellence, 
-                  TravelLux started as a boutique travel service focusing on luxury accommodations and 
+                  Founded in 2025 by Jagath Reddy Vemula, a hospitality veteran with a passion for excellence, 
+                  Retreat started as a boutique travel service focusing on luxury accommodations and 
                   personalized experiences. What began as a small team of dedicated travel enthusiasts 
                   has grown into a global network of experts committed to delivering exceptional service.
                 </p>

@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      location: "New York, USA",
+      name: "Rohith Reddy",
+      location: "Hyderabad",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?auto=format&fit=crop&q=80&w=150",
       rating: 5,
       service: "Ocean View Resort",
