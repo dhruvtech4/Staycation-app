@@ -26,20 +26,20 @@ const ServiceCategories = () => {
       href: "/services/adventures",
       image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=500"
     },
-    {
-      icon: Sparkles,
-      title: "Spa",
-      description: "Rejuvenating wellness and spa treatments",
-      href: "/services/spa",
-      image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=500"
-    },
-    {
-      icon: Home,
-      title: "Cleaning",
-      description: "Professional cleaning services for vacation rentals",
-      href: "/services/cleaning",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=500"
-    }
+    // {
+    //   icon: Sparkles,
+    //   title: "Spa",
+    //   description: "Rejuvenating wellness and spa treatments",
+    //   href: "/services/spa",
+    //   image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=500"
+    // },
+    // {
+    //   icon: Home,
+    //   title: "Cleaning",
+    //   description: "Professional cleaning services for vacation rentals",
+    //   href: "/services/cleaning",
+    //   image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=500"
+    // }
   ];
 
   return (
@@ -56,7 +56,7 @@ const ServiceCategories = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (

@@ -7,18 +7,18 @@ const Testimonials = () => {
     {
       name: "Rohith Reddy",
       location: "Hyderabad",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?auto=format&fit=crop&q=80&w=150",
+      avatar: "/Rohith.jpg",
       rating: 5,
-      service: "Ocean View Resort",
+      service: "Taj Resort",
       review: "Absolutely incredible experience! The resort exceeded all our expectations. The staff was phenomenal, and the ocean view from our villa was breathtaking. Will definitely book with TravelLux again.",
       verified: true
     },
     {
-      name: "Michael Chen",
-      location: "London, UK",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150",
+      name: "Hanuman Reddy",
+      location: "Hyderabad",
+      avatar: "/hanuman.jpg",
       rating: 5,
-      service: "Alpine Adventure",
+      service: "Raddison Blu",
       review: "The Swiss Alps adventure was life-changing! Professional guides, top-notch equipment, and unforgettable views. The attention to detail and safety measures were impressive.",
       verified: true
     },

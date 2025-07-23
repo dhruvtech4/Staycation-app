@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
+import HotelSearch from "./Hotelsearch";
 
 const Hero = () => {
   return (
@@ -19,10 +20,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6">
-            <Star className="h-4 w-4 text-yellow-400 fill-current" />
-            <span className="text-white text-sm font-medium">Luxury Travel & Hospitality Services</span>
-          </div>
+          
 
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -33,10 +31,13 @@ const Hero = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            From luxury hotels and exotic resorts to thrilling adventures and rejuvenating spa experiences. 
-            We curate unforgettable moments tailored just for you.
-          </p>
+          {/* <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Luxury stays, exotic getaways, and unforgettable experiences — just for you.
+          </p> */}
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-6">
+            <Star className="h-4 w-4 text-yellow-400 fill-current" />
+            <span className="text-white text-sm font-medium">Luxury Travel & Hospitality Services</span>
+          </div>
 
           {/* CTA Buttons */}
           {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -77,6 +78,9 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div> */}
+      <div className="absolute bottom-0" >
+         <HotelSearch/>
+      </div>
     </section>
   );
 };
